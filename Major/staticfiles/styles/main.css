@@ -13,7 +13,6 @@ html {
 a {
    text-decoration: none;
    color: #000;
-   color: rgb(82, 243, 61);
 }
 
 a:hover {
@@ -479,20 +478,21 @@ select:focus {
 .about_intro {
    display: flex;
    flex-direction: column;
+   align-items: center;
+   justify-content: center;
    margin-bottom: 40px;
+   border: 4px solid grey;
+   padding: 12px;
+   background-color: white;
 }
 
 .about_intro_1 {
    font-size: 17px;
    font-weight: 500;
-   line-height: 1.2rem;
+   line-height: 1.7rem;
+   text-indent: 7.8rem;
 }
 
-.about_intro_2 {
-   text-indent: 17.5rem;
-   text-align: justify;
-   line-height: 2.9rem;
-}
 
 .about_objective {
    display: flex;
@@ -563,6 +563,14 @@ select:focus {
 
 .rem_hide {
    display: block;
+}
+
+.moreinfo_dev {
+   margin-bottom: 12px;
+}
+
+.iframe_sql {
+   border: 4px solid grey;
 }
 
 /*  account page */
@@ -644,17 +652,22 @@ select:focus {
 }
 
 .account-graph1 {
-   background-color: rgb(61, 58, 58);
    flex-basis: 50%;
    background-color: white;
-   border: 5px solid #e5e7eb;
+   border: 2px solid #e5e7eb;
    border-radius: 6px;
    margin: 3px;
+   padding: 12px;
+}
+
+.account-graph1 h2 {
+   color: rgb(84, 84, 136);
 }
 
 .account-graph1 p {
-
-   font-size: 12px;
+   font-size: 18px;
+   margin-left: 32px;
+   text-align: justify;
 }
 
 .account-graph2 {
@@ -664,7 +677,6 @@ select:focus {
    background-color: white;
    border: 2px solid #e5e7eb;
    border-radius: 6px;
-   height: 400px;
 }
 
 /* .account-graph2-graph {}
