@@ -1,0 +1,45 @@
+{% extends 'main.html' %}
+{% block content %}
+{% load static%}
+
+<body>
+  <div class="over__cover">
+    <div class="cover height-80">
+      <div class="auth__header">
+        <a href="{% url 'home'%}">
+          <img src="{% static 'images/main-logo.png' %}" alt="icon" />
+        </a>
+        <h3>Account Login</h3>
+        <p>Hello Coder, Welcome Back!</p>
+      </div>
+
+      <form method="post" action="#" class="auth__form">
+        {% csrf_token %}
+        <!-- Input:Email -->
+        <div class="form__field">
+          <label for="formInput#text">Username: </label>
+          <input class="input input--text" id="formInput#text" type="text" name="username"
+            placeholder="Enter your username..." />
+        </div>
+
+        <!-- Input:Password -->
+        <div class="form__field">
+          <label for="formInput#password">Password: </label>
+          <input class="input input--password" id="formInput#passowrd" type="password" name="password"
+            placeholder="••••••••" />
+        </div>
+        <div class="auth__actions">
+          <input class="submit" type="submit" value="Log In" />
+          <a href="forgetpassword.html">Forgot Password?</a>
+        </div>
+      </form>
+
+      <div class="auth__alternative">
+        <p>Don’t have an Account?</p>
+        <a href="{% url 'signup' %}">Sign Up</a>
+      </div>
+    </div>
+  </div>
+</body>
+
+{% endblock content%}

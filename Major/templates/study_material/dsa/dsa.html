@@ -1,0 +1,94 @@
+{% extends 'main.html'%}
+{%load static %}
+{% block content %}
+
+<div class="oops_container">
+
+   <div class="oops_main">
+      <div class="oops_main_container_1">
+         <br>
+         <h1>Data structures</h1>
+         <p>Almost all programs process data in some form. Data needs to be stored in a way that means it can be easily
+            manipulated by program code. Very basic (primitive) data types, such as an integer (a whole number) or
+            Boolean (True or False), allow you to store a single value. It is possible to combine these primitive data
+            types to create compound data types (a record) or to create more complex data structures (arrays and
+            lists).<br>
+            At a more advanced level, static and dynamic data structures are introduced. Together with abstract data
+            types, such as stacks and queues, they allow the more sophisticated organisation and manipulation of data,
+            and provide methods for adding, removing, and traversing data.
+         </p>
+         <h3>How data is stored</h3>
+         <p>In computer science, you often need to manage large amounts of data. This data needs to be organised into
+            data structures for a computer program to process it.<br>
+
+            You may have organised your files and folders on your computer in a specific structure with files that
+            relate to each other in one folder. For example, you may have a folder named 'computer science' and all the
+            files you create for computer science are stored inside the folder. You may also have a folder named 'code'
+            inside the 'computer science' folder, where you save all of your programs. When you create your simple
+            folder structure, you have to think about how files and folders are stored.<br>
+
+            Programmers also need to think about how the data in programs is stored in order to access and manipulate
+            the data. You can think of a data structure as a container that stores a collection of data.</p>
+         <h3>Arrays</h3>
+         <p>An array is a data structure that holds a number of data items or elements of the same data type. When you
+            want to store many pieces of data that are related and have the same data type, it is often better to use an
+            array instead of many separate variables. An element in an array can be accessed using the the location
+            number, known as index. In this array of bird names, Seagull is in index 0, Falcon is in index 1, Eagle is
+            in index 2, and Robin in index 3. It is important to point out that in most programming languages, the first
+            index in an array is 0, not 1.</p>
+
+         <table>
+            <tr>
+               <th>Location number</th>
+               <th>0</th>
+               <th>1</th>
+               <th>2</th>
+               <th>3</th>
+            </tr>
+            <tr>
+               <td>Element</td>
+               <td>Seagull</td>
+               <td>Falcon</td>
+               <td>Eagle</td>
+               <td>Robin</td>
+            </tr>
+         </table>
+         <div class="oops_container1_img">
+            <img src="{% static 'images/dsa_topic.svg' %}" alt="Cat">
+         </div>
+         <p>Different programming languages implement array type structures in a variety of ways. In some languages, an
+            array is implemented as a static data structure. Its length (the number of elements it has) is fixed when
+            declared and cannot be changed during runtime. This type of array is often referred to in exam
+            questions.<br>
+
+            In other languages, arrays are dynamic. In Python, a list is a data structure that can be indexed like an
+            array. However, it is dynamic and can hold different types of data (at the same time) so does not conform to
+            the pure definition of an array.</p>
+
+         <h3>Static data</h3>
+         <p>When you create a static data structure, the system reserves memory for a set amount of data. This is
+            established by the programmer in advance, even though less memory may actually be needed during program
+            execution. In many programming languages, an array is usually implemented as a static data structure that is
+            fixed in size and can only contain elements of the same data type. The contents of a static array can be
+            changed, but the array cannot be resized.</p>
+         <p>Static arrays are very efficient in terms of being able to access elements directly, but can be inefficient
+            in terms of memory use. Memory is wasted if, for example, the array is declared with space for 100 elements
+            but only 10 elements are added when the program is run. On the other hand, if insufficient space has been
+            allocated, the program may crash or not work properly.</p>
+
+         <h3>Dynamic data</h3>
+         <p>Dynamic data structures are memory efficient. The memory capacity of a dynamic data structure is not fixed,
+            and the number of data items that it can hold is constrained only by the overall memory allocation to the
+            program.</p>
+         <p>In Python, a list is an example of a dynamic data structure. A Python list has the advantage that its size
+            is not predetermined, and the elements in the list can be accessed directly.</p>
+
+      </div>
+
+
+   </div>
+
+
+</div>
+
+{% endblock content %}

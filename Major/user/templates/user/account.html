@@ -1,0 +1,66 @@
+{% extends 'main.html' %}
+{%block content %}
+{% load static %}
+<div class="account-main">
+   <div class="account-profile">
+      <div class="account-profile-cover">
+         <a class="account-profile-cover-1 submit" href="">Refresh</a>
+         <img class="account-profile-cover-2" src="{{profile.profile_image.url}}" alt="profile_img">
+         <h2>{{profile.first_name}} {{profile.last_name}}</h2>
+         <p>Based in {{profile.location}}</p>
+         <div class="account-profile-cover-3">
+            <a href="{{profile.social_facebook}}" target="_blank"><i class="fa-brands fa-facebook fa-2x"></i></a>
+            <a href="{{profile.social_twitter}}" target="_blank"><i class="fa-brands fa-twitter fa-2x"></i></a>
+            <a href="{{profile.social_instagram}}" target="_blank"><i class="fa-brands fa-instagram fa-2x"></i></a>
+            <a href="{{profile.social_linkedin}}" target="_blank"><i class="fa-brands fa-linkedin fa-2x"></i></a>
+            <a href="{{profile.social_github}}" target="_blank"><i class="fa-brands fa-github fa-2x"></i></a>
+            <a href="{{profile.social_stackoverflow}}" target="_blank"> <i
+                  class="fa-brands fa-stack-overflow fa-2x"></i></a>
+         </div>
+         <a class="submit account-profile-cover-4" href="{{profile.social_portfolio}}" target="_blank">Portfolio <i
+               class="fa-solid fa-globe"></i></a>
+      </div>
+      <div class="account-graph-section">
+         <div class="account-graph1">
+            <canvas id="myChart0"></canvas>
+         </div>
+         <div class="account-graph2">
+            <div class="account-graph2-graph">
+               <canvas id="myChart1"></canvas>
+            </div>
+            <div class="account-graph2-points">
+               <canvas id="myChart2"></canvas>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="account-heatmap">
+      <canvas style="height: 370px;" id="myChart3"></canvas>
+   </div>
+
+   <div class="account-coding-profile">
+      <div class="account-leetcode-profile"></div>
+      <div class="account-codechef-profile"></div>
+      <div class="account-hackerrank-profile"></div>
+   </div>
+
+</div>
+<script>
+   var myChart = new Chart(
+      document.getElementById('myChart0'),
+      config0
+   );
+   var myChart = new Chart(
+      document.getElementById('myChart1'),
+      config1
+   );
+   var myChart = new Chart(
+      document.getElementById('myChart2'),
+      config2
+   );
+   var myChart = new Chart(
+      document.getElementById('myChart3'),
+      config3
+   );
+</script>
+{% endblock content %}

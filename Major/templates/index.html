@@ -1,0 +1,85 @@
+{% extends 'main.html'%}
+{%load static %}
+{% block content %}
+<div class="content">
+   <div class="content-heads">
+      <h1>Welcome to Coding Grading</h1>
+      <p>Improve Your Skill</p>
+   </div>
+   <div class="content-cards">
+      <div class="card">
+         <img src="{% static 'images/networking.jpg' %}" alt="card-img">
+         <div class="hover-text">
+            <a href="{% url 'learn_dsa' %}">Practice DSA</a>
+         </div>
+      </div>
+      <div class="card">
+         <img src="{% static 'images/networking.jpg' %}" alt="card-img">
+         <div class="hover-text">
+            <a href="{% url 'learn_oops' %}">learn OOPS</a>
+         </div>
+      </div>
+      <div class="card">
+         <img src="{% static 'images/networking.jpg' %}" alt="card-img">
+         <div class="hover-text">
+            <a href="{% url 'learn_dbms' %}">learn DBMS</a>
+         </div>
+      </div>
+      <div class="card">
+         <img src="{% static 'images/networking.jpg' %}" alt="card-img">
+         <div class="hover-text">
+            <a href="{% url 'learn_networking' %}">learn Networking</a>
+         </div>
+      </div>
+   </div>
+   <!-- <div class="performers">
+      <div class="p-head">
+         <h1>Top Performers</h1>
+      </div>
+
+      <div class="about_dev"> -->
+
+   <!-- <div class="dev_card">
+            <div class="dev_img">
+               <img src="{% static 'images/dummy_profile.jfif' %}" alt="image">
+            </div>
+            <div class="dev_name">
+               <p class="dev_full_name">Goodwill Kumawat</p>
+               <p class="dev_desig">SDE1 at appcino</p>
+            </div>
+            <button class="submit info">More Info &#8690;</button>
+         </div>
+         <div class="dev_card">
+            <div class="dev_img">
+               <img src="{% static 'images/dummy_profile.jfif' %}" alt="image">
+            </div>
+            <div class="dev_name">
+               <p class="dev_full_name">Goodwill Kumawat</p>
+               <p class="dev_desig">SDE1 at appcino</p>
+            </div>
+            <button class="submit info">More Info &#8690;</button>
+         </div> -->
+   <!-- <div class="dev_card">
+            <div class="dev_img">
+               <img src="{% static 'images/dummy_profile.jfif' %}" alt="image">
+            </div>
+            <div class="dev_name">
+               <p class="dev_full_name">Goodwill Kumawat</p>
+               <p class="dev_desig">SDE1 at appcino</p>
+            </div>
+            <button class="submit info">More Info &#8690;</button>
+         </div>
+         <div class="dev_card">
+            <div class="dev_img">
+               <img src="{% static 'images/dummy_profile.jfif' %}" alt="image">
+            </div>
+            <div class="dev_name">
+               <p class="dev_full_name">Goodwill Kumawat</p>
+               <p class="dev_desig">SDE1 at appcino</p>
+            </div>
+            <button class="submit info">More Info &#8690;</button>
+         </div> -->
+   <!-- </div> -->
+</div>
+</div>
+{% endblock content %}

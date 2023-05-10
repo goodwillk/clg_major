@@ -1,0 +1,77 @@
+{% extends 'main.html' %}
+{% block content %}
+{% load static%}
+
+<body>
+   <div class="about">
+
+      <p><b>Submitted By :</b></p>
+      <div class="about_dev">
+
+         <div class="dev_card">
+            <div class="dev_img">
+               <img src="{% static 'images/dummy_profile.jfif' %}" alt="image">
+            </div>
+            <div class="dev_name">
+               <p class="dev_full_name">Goodwill Kumawat</p>
+            </div>
+            <button class="submit info" onclick="display_hide(1)">More Info &#8690;</button>
+            <div class="moreinfo_dev " id="rem_hide1">
+               <h5>Email: 19EGJCS089@gitjaipur.com</h5>
+            </div>
+         </div>
+         <div class="dev_card">
+            <div class="dev_img">
+               <img src="{% static 'images/dummy_profile.jfif' %}" alt="image">
+            </div>
+            <div class="dev_name">
+               <p class="dev_full_name">Harjeet Saini</p>
+            </div>
+            <button class="submit info" onclick="display_hide(2)">More Info &#8690;</button>
+            <div class="moreinfo_dev " id="rem_hide2">
+               <h5>Email: 19EGJCS092@gitjaipur.com</h5>
+            </div>
+         </div>
+         <div class="dev_card">
+            <div class="dev_img">
+               <img src="{% static 'images/dummy_profile.jfif' %}" alt="image">
+            </div>
+            <div class="dev_name">
+               <p class="dev_full_name">Divam Gupta</p>
+            </div>
+            <button class="submit info" onclick="display_hide(4)">More Info &#8690;</button>
+            <div class="moreinfo_dev " id="rem_hide4">
+               <h5>Email: 19EGJCS081@gitjaipur.com</h5>
+            </div>
+         </div>
+         <div class="dev_card">
+            <div class="dev_img">
+               <img src="{% static 'images/dummy_profile.jfif' %}" alt="image">
+            </div>
+            <div class="dev_name">
+               <p class="dev_full_name">Dalini Sharma</p>
+            </div>
+            <button class="submit info" onclick="display_hide(3)">More Info &#8690;</button>
+            <div class="moreinfo_dev " id="rem_hide3">
+               <h5>Email: 19EGJCS073@gitjaipur.com</h5>
+            </div>
+         </div>
+
+
+
+
+
+
+      </div>
+   </div>
+   <script>
+      console.log('someone')
+      function display_hide(id) {
+         const block1 = document.getElementById("rem_hide" + id)
+         block1.classList.add('rem_hide');
+      }
+
+   </script>
+</body>
+
+{% endblock content%}

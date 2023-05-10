@@ -1,0 +1,106 @@
+{% extends 'main.html' %}
+{%block content %}
+{% load static%}
+
+<body>
+   <section id="questions">
+      <div class="questions-content">
+         <form action="">
+            <div class="filters">
+               <div class="search">
+                  <input type="text" placeholder="Search by problem name" name="query">
+               </div>
+               <div class="tags flex-basis-40">
+                  <label for="tags">Tags:</label>
+                  <select id="tags" name="tag">
+                     <option selected>All</option>
+                     <option value="Array">Array</option>
+                     <option value="Recursion">Recursion</option>
+                     <option value="Dynamic_Programming">Dynamic Programming</option>
+                     <option value="Strings">Strings</option>
+                     <option value="Maths">Maths</option>
+                     <option value="Greedy">Greedy</option>
+                     <option value="DFS">DFS</option>
+                     <option value="Tree">Tree</option>
+                     <option value="Hashing">Hashing</option>
+                     <option value="Binary_search">Binary search</option>
+                     <option value="BFS">BFS</option>
+                     <option value="Two_Pointer">Two pointer</option>
+                     <option value="Stack">Stack</option>
+                     <option value="Design">Design</option>
+                     <option value="Graph">Graph</option>
+                     <option value="Bit_Manipulation">Bit Manipulation</option>
+                     <option value="Linked_List">Linked List</option>
+                     <option value="Heap">Heap</option>
+                     <option value="Sliding_Window">Sliding Window</option>
+                     <option value="Trie">Trie</option>
+                     <option value="Segment_Tree">Segment Tree</option>
+                  </select>
+               </div>
+               <div class="difficulty flex-basis-30">
+                  <label for="difficulty">Difficulty:</label>
+                  <select id="difficulty" name="difficulty">
+                     <option selected>All</option>
+                     <option value="Array">Easy</option>
+                     <option value="Array">Medium</option>
+                     <option value="Array">Hard</option>
+                  </select>
+               </div>
+               <input class="submit flex-basis-10" type="submit" value="Search">
+            </div>
+         </form>
+         <div class="question-table">
+            <table class="table">
+               <tr class="header-row">
+                  <th class="column-q">Question</td>
+                  <th class="column">Difficulty</td>
+                  <th class="column">Link</td>
+                  <th class="column">Solution</td>
+               </tr>
+               {% for problem in problems %}
+               <tr class="row">
+                  <td class="column-q">{{problem.title}}</td>
+                  {% if problem.difficulty == 'easy' %}
+                  <td class="column" style="color: green; font-weight: 400;">Easy</td>
+                  {% elif problem.difficulty == 'medium' %}
+                  <td class="column" style="color: orange; font-weight: 400;">Medium</td>
+                  {%else %}
+                  <td class="column" style="color: red; font-weight: 400;">Hard</td>
+                  {% endif %}
+                  {% if problem.website == 'leetcode' %}
+                  <td class="column"><a href="{{problem.source_link}}" target="_blank"><img class="link-logo"
+                           src="{% static 'images/leetcode.png' %}" alt=""></a></td>
+                  {% elif problem.website == 'codechef' %}
+                  <td class="column"><a href="{{problem.source_link}}" target="_blank"><img class="link-logo"
+                           src="{% static 'images/code_chef.png' %}" alt=""></a></td>
+                  {% else %}
+                  <td class="column"><a href="{{problem.source_link}}" target="_blank"><img class="link-logo"
+                           src="{% static 'images/gfg.jpg' %}" alt=""></a></td>
+                  {% endif %}
+                  <td class="column"><a href=""><img class="link-logo" src="{% static 'images/youtube.png' %}"
+                           alt=""></a></td>
+               </tr>
+               {% endfor %}
+
+
+
+            </table>
+         </div>
+      </div>
+      <!-- <div class="pagination">
+            <ul class="container">
+                <li><a href="#" class="btn btn--disabled">&#10094; Prev</a></li>
+                <li><a href="#" class="btn btn--sub">01</a></li>
+                <li><a href="#" class="btn">02</a></li>
+                <li><a href="#" class="btn">03</a></li>
+                <li><a href="#" class="btn">04</a></li>
+                <li><a href="#" class="btn">05</a></li>
+
+                <li><a href="#" class="btn">Next &#10095;</a></li>
+            </ul>
+        </div> -->
+   </section>
+
+</body>
+
+{%endblock content %}

@@ -1,0 +1,150 @@
+{% extends 'main.html'%}
+{%load static %}
+{% block content %}
+
+<div class="oops_container">
+
+   <div class="oops_main">
+      <div class="oops_main_container_1">
+         <br>
+         <h1>Object-oriented programming</h1>
+         <p>
+            Object-oriented programming (OOP) is an approach to systems development that focuses on objects and the way
+            that
+            they interact. Objects surround us in the real world. Look around you. For example, I am a person, and I
+            have a
+            desk, a computer, and a cup of water; these are all objects. How do they interact? I sit at my desk, switch
+            on
+            the
+            computer, and drink some water.
+            The OOP method of programming (or paradigm) is different to the procedural paradigm, which many programmers
+            start
+            out with on their learning journey. In this topic you will learn about objects and how they can be defined
+            and
+            worked with in a computer system.
+            At an advanced level, you can learn about core OOP principles such as encapsulation and polymorphism. You
+            will
+            also find out about inheritance and aggregation and why they are important to the design of an
+            object-oriented
+            program. Programmers use a diagrammatical language called UML to model objects in a program and their
+            interactions.
+         </p>
+         <h3>Objects and attributes</h3>
+         <p>Objects are part of our everyday lives. If you look around, you can probably see hundreds of different
+            objects:
+            your mobile phone, some books, a light switch, and many more. There are also objects that exist that you
+            can't
+            see as easily, e.g. a bank account, a dentist appointment, or a maths lesson.
+
+            In computer science, an object is anything that exists that you need to define and work with in a computer
+            system. Consider the example of writing a computer game for a young child. The game will allow the child to
+            look after a pet. The child can choose from a list of common pets, e.g. a dog, a cat, a hamster, or a
+            gerbil.
+
+            You could start by defining an object for each different type of pet but, in Object-Oriented Programming
+            (OOP),
+            you will try to generalise as much as possible. This allows you to write code that can be shared. Shared
+            code
+            means there is less to test and maintain in the future.
+
+            You will start by identifying the properties that are common to all pets. This will allow you to write a
+            standard definition of a pet that can be shared by any type of pet</p>
+         <div class="oops_container1_img">
+            <img src="{% static 'images/oops_cat.svg' %}" alt="Cat">
+         </div>
+         <p>If I asked you to describe the animal pictured in Figure 1 above, you would probably tell me that you can
+            see a
+            playful, ginger cat. The cat is named Tiggy.</p>
+         <p>The way you describe objects is with a list of characteristics. These are known as attributes.
+
+            When you model an object in a computer system, you must decide on the list of attributes that you need to
+            store. Real-life objects will have many, many characteristics, but not all of them will be relevant to your
+            system. For example, a real pet will have an age and a weight, but these may not be relevant to the game.
+
+            Here is the initial list of attributes for a pet object :
+
+         <ol>
+            <li>Name</li>
+            <li>Type</li>
+            <li>Colour</li>
+            <li>Mood</li>
+         </ol>
+         Now you can produce a more formal definition of the object. You can include the data type of each attribute,
+         and an example of the data, so that you are clear about the nature of each attribute.</p>
+         <div class="oops_table">
+            <table>
+               <tr>
+                  <th>Pet</th>
+               </tr>
+               <tr>
+                  <th>Attribute</th>
+                  <th>Data type</th>
+                  <th>Example</th>
+               </tr>
+               <tr>
+                  <td>Type</td>
+                  <td>String</td>
+                  <td>cat</td>
+               </tr>
+               <tr>
+                  <td>Colour</td>
+                  <td>String</td>
+                  <td>ginger</td>
+               </tr>
+               <tr>
+                  <td>Mood</td>
+                  <td>String</td>
+                  <td>Playful</td>
+               </tr>
+            </table>
+         </div>
+
+         <h3>Classes</h3>
+         <p>Once you have identified an object and its attributes, you are ready to write a class definition.
+
+            A class is a specification that defines all objects of the same type. In this case, you will write a class
+            to define a pet. Every pet in the game will be created from the same class definition and will have the same
+            set of attributes. However, the value of each these attributes will be specific to each pet.
+
+            A classic example that is used to explain the concept of a class is a 'cookie cutter'. The video clip shows
+            how the cutter is used to make a cookie. The cutter is a template that can be used to make as many cookies
+            as needed. Likewise, a class definition is a template for creating as many instances of objects as required
+            for a system.</p>
+
+         <h4>The Pet class</h4>
+         <p>In the pseudocode example (shown below), the first thing that is specified is the class identifier (name),
+            which in this case is Pet. In most programming languages, it is conventional to specify the name of the
+            class starting with an upper-case letter.
+
+            Next, the attributes of the class are defined. For the Pet class there are four attributes: name, type,
+            colour, and mood. These are shown together with their data types.</p>
+
+         <p>The keyword PRIVATE is an access modifier. This specifies how the attribute can be accessed from outside the
+            class that it is defined in. You can read more about access modifiers in the section (on this page) labelled
+            Getters and setters.</p>
+
+         <h3>Instantiation</h3>
+         <p>As detailed previously, a class is a general definition of an object. It will be used to make one or more
+            instances of that object using a process known as instantiation.
+
+            At the point of instantiation, each instance of an object is given a unique identifier so that the specific
+            instance can be referenced when needed. This identifier is known as a reference variable; it will hold the
+            address of a location in memory where the object is stored.
+
+         </p>
+         <h4>Creating a specific pet</h4>
+         <p>When the code is run, a new object (an instance of the Pet class) is instantiated. The object is assigned to
+            a reference variable. This will hold the address of the location in memory where the object can be found. In
+            this example, the name of the reference variable is my_pet. Like any other variable name, you should choose
+            something meaningful in the context of the program you are writing.
+
+         </p>
+      </div>
+
+
+   </div>
+
+
+</div>
+
+{% endblock content %}

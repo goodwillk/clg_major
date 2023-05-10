@@ -1,0 +1,215 @@
+{% extends 'main.html'%}
+{%load static %}
+{% block content %}
+
+<div class="oops_container">
+
+   <div class="oops_main">
+      <div class="oops_main_container_1">
+         <br>
+         <h1>Database concepts</h1>
+         <p>Data is fundamental to any computer system. With data comes the need for a system that is able to store,
+            sort, and search through it. Imagine the amount of users a popular social media company has, then think
+            about storing every post they have made and the media that comes with it, such as a video, image, or
+            animated GIF. Without a database, you wouldn't be able to log in to access your posts, let alone be able to
+            make connections with other users and see their posts.
+         </p>
+         <p>In this section you will learn that databases can be as simple as a single file, and as complex as a set of
+            related tables, each with fields and keys. It is important that data within a database is kept up-to-date
+            and consistent, and it is crucial to avoid storing the same data in multiple places.</p>
+         <p>At a more advanced level, you will learn that creating an entity relationship model and designing a set of
+            tables using the rules of normalisation is important. Challenges arise when lots of users want to access
+            data simultaneously, and you will learn that transactions and transaction processing are needed to ensure
+            that the data does not get out of sync.</p>
+
+         <h3>Entity relationship modelling</h3>
+
+         <p>One of the first steps of database design is to produce a data model. A data model is used to represent and
+            visualise how data is structured for a given scenario, the relationships between data elements, and
+            constraints or limitations that may exist.<br>
+
+            Data models are designed to fulfil specific requirements. These are specified on the analysis phase of the
+            development of a database system. This process includes defining the type of data that the database will
+            store, the rules and restrictions that will apply to the data, the database applications that will be
+            coupled with the database and the needs of the users that will interact with the database applications.<br>
+
+            One of the most common ways to present a data model is an entity relationship diagram.</p>
+         <h4>Entities and attributes</h4>
+         <p>An entity is used to represent an object in the real world that can be distinguished from other objects. An
+            entity can be a physical object (such as a person or a place) or a concept (such as an activity or a task)
+            for which we need to record data in the database. For example, a physical object could be an employee, a
+            customer or a product, and a concept could be an online order, a school course or a booking.<br>
+
+            An attribute is used to represent a property, a quality or a characteristic that describes an entity. For
+            example, the name of an employee, or the date and time that a booking was submitted.<br>
+
+            An entity has a value for each of its attributes. These values make up the main body of data that is stored
+            in the database. For example suppose that you are designing a model for a school where students are able to
+            book appointments with teachers for parents' evening. A Teacher entity could have the following attributes
+            and values:</p>
+
+         <table>
+            <tr>
+               <th>TeacherId</th>
+               <th>FirstName</th>
+               <th>MiddleName</th>
+               <th>LastName</th>
+               <th>DateOfBirth</th>
+               <th>HireDate</th>
+               <th>Email</th>
+            </tr>
+            <tr>
+               <td>208</td>
+               <td>Li</td>
+               <td>Bella</td>
+               <td>Wang</td>
+               <td>05/12/1980</td>
+               <td>03/07/2000</td>
+               <td>li.wang@example.com</td>
+            </tr>
+            <tr>
+               <td>209</td>
+               <td>Simon</td>
+               <td></td>
+               <td>Bennett</td>
+               <td>19/11/1990</td>
+               <td> 05/09/2000</td>
+               <td>simon.bennett@example.com</td>
+            </tr>
+         </table>
+
+         <p>Sometimes an attribute can accept a null value, for example an attribute that is used to record the middle
+            name for a teacher will be empty for the teachers that only have a first name.<br>
+
+            Each set of values that corresponds to a specific teacher is called an instance of the Teacher entity. In
+            order to distinguish between the different instances of an entity we need to establish an entity identifier
+            (also known an a key attribute). This is an attribute (or set of attributes) that can be used to uniquely
+            identify each instance of the entity. For example, the attribute TeacherId is a unique number that is
+            assigned to each teacher when they are hired. Therefore, it is unique for each instance of the entity and
+            can be used as an entity identifier. An entity identifier can't be null.<br>
+
+            Sometimes one attribute on its own is not enough to uniquely identify each instance of an entity. Instead a
+            set of the minimum number of attributes that can achieve this goal are combined together into a composite
+            entity identifier. For example, suppose that the database you are designing has a TimeOff entity that
+            captures which teachers are absent on specific dates. The model uses the attributes TeacherId and StartDate
+            as a composite entity identifier. It is not possible to use only one of the entity attributes as their
+            values are not unique.</p>
+
+         <h6>Entity descriptions</h6>
+         <p>There is a standard notation for describing entities:</p>
+         <i>EntityName (EntityIdentifier, attribute1, attribute2, attribute3, ...)</i>
+         <p>Following from the previous example, the entity description for the Teacher entity is:</p>
+         <i>Teacher (TeacherId, FirstName, MiddleName, LastName, DateofBirth, HireDate, Email)</i>
+         <p>The definition starts with the name of the entity, followed by a list of attributes in parentheses
+            (brackets). The entity identifier is underlined, and it is conventional to specify it as the first attribute
+            (or set of attributes) in the list.<br>
+
+            If the entity identifier is composite, all of the attributes that make up the identifier are underlined. In
+            this form the entity description for the TimeOff entity is:</p>
+
+         <i>TimeOff (TeacherId, StartDate, EndDate, Reason)</i>
+
+         <h3>Entity relationship diagram</h3>
+         <p>A relationship of two or more entities is used to represent an interaction or association that exists
+            between those entities. For example, an employee works in a company, therefore a relationship exists between
+            the entities Employee and Company.<br>
+
+            In an entity relationship (ER) diagram, each entity is represented by a rectangle. A relationship between
+            entities is shown as a line and can be one of three types:</p>
+         <div class="oops_container1_img">
+            <img src="{% static 'images/dbms_one2one.svg' %}" alt="Cat">
+            <h5>One-to-One relationship</h5>
+         </div>
+         <div class="oops_container1_img">
+            <img src="{% static 'images/dbms_one2many.svg' %}" alt="Cat">
+            <h5>One-to-Many relationship</h5>
+         </div>
+         <div class="oops_container1_img">
+            <img src="{% static 'images/dbms_many2many.svg' %}" alt="Cat">
+            <h5>Many-to-Many relationship</h5>
+         </div>
+
+         <p>The line between the entities is used to illustrate the cardinality of the relationship. The cardinality
+            refers to the number of times an instance in one entity can be associated with instances in the related
+            entity. The cardinality can be one or many:</p>
+
+
+         <ol>
+            <li>For a cardinality of one, the end of the relationship line is straight.</li>
+            <li>For a cardinality of many, the end of the relationship line is a splayed line (commonly referred to as a
+               crow's foot).</li>
+         </ol>
+         <h6>Relationship categories</h6>
+         <p>The different types of cardinality result in three main categories of relationships:</p>
+
+         <ol>
+            <li>A one-to-one relationship is when one instance of an entity is associated with only one instance of
+               another entity.</li>
+            <li>A one-to-many relationship is when one instance of an entity is associated with more than one instance
+               of another entity.</li>
+            <li>A many-to-many relationship is when more than one instances of an entity are associated with more than
+               one instances of another entity.</li>
+         </ol>
+         <p>Verbalising the nature of the relationship between two entities can help you find out the category of
+            relationship between them. To do this, form a sentence that describes the relationship from the point of
+            view of a single instance of each entity. It helps to start your sentences with "Each ...".</p>
+         <p>For example, think about the ER diagram for a school where students are able to book appointments with
+            teachers for parents' evening:</p>
+         <p>An example of a one-to-one relationship is that which exists between head teacher and school:</p>
+         <ol>
+            <li>Each head teacher runs one school</li>
+            <li>Each school is run by one head teacher</li>
+         </ol>
+         <p>An example of a one-to-many relationship is between student and appointment:</p>
+         <ol>
+            <li>Each student books many appointments</li>
+            <li>Each appointment is for one student</li>
+         </ol>
+         <p>An example of a many-to-many relationship is that which exists between student and teacher:</p>
+         <ol>
+            <li>Each student is taught by many teachers</li>
+            <li>Each teacher has many students</li>
+         </ol>
+         <p>In a relational database you can't implement many-to-many relationships. However, in the early stages of
+            database design, you will identify many examples of this type of relationship.<br>
+
+            Once you have identified all of the entities and relationships, you can put them together into an ER
+            diagram.</p>
+
+         <div class="oops_container1_img">
+            <img src="{% static 'images/dbms_er.svg' %}" alt="Cat">
+            <h5>Many-to-Many relationship</h5>
+         </div>
+
+         <h3>A scenario for an ER diagram</h3>
+         <p>For this topic you will work through the following scenario:
+            A sports club requires a relational database to store the data that it needs to manage its courses. The
+            members can gain certificates to recognise their achievement in a particular course, such as badminton,
+            swimming or climbing. Most courses have a fee to cover the cost of materials or equipment. Prior to gaining
+            a certificate, the performance of a member is assessed by an instructor whose contact details are also
+            stored in the database.
+         </p>
+         <ol>
+            <li>The members of the sports club are young people. On enrolment, each young person is issued a membership
+               card with a unique membership number. The member’s first name, last name, and home phone number are
+               recorded.</li>
+            <li>Each course is identified by a unique six-digit code and has a longer description that will appear on
+               the certificate. The fee for the course is also recorded.</li>
+            <li>Each instructor is identified by a unique number. Their first name, last name, and email address are
+               also recorded.</li>
+            <li>Members that successfully complete a course to an agreed standard receive a certificate for their
+               achievement. The date that the certificate was gained is recorded, as well as the identifier of the
+               instructor.</li>
+         </ol>
+         <p>Firstly you need to identify the main entities for this scenario. Here are the entity descriptions in
+            standard notation:</p>
+
+      </div>
+
+
+   </div>
+
+
+</div>
+
+{% endblock content %}
