@@ -20,6 +20,14 @@ class Profile(models.Model):
     social_instagram=models.CharField(max_length=200,blank=True,null=True)
     social_portfolio=models.CharField(max_length=200,blank=True,null=True)
     created=models.DateTimeField(auto_now_add=True)
+    
+    experience=models.CharField(max_length=1000, null=True, blank=True)
+    projects=models.CharField(max_length=1000, null=True, blank=True)
+    skills=models.CharField(max_length=1000, null=True, blank=True)
+    certificates=models.CharField(max_length=1000, null=True, blank=True)
+    achieviements=models.CharField(max_length=1000, null=True, blank=True)
+    training=models.CharField(max_length=1000, null=True, blank=True)
+
     id=models.UUIDField(default=uuid.uuid4,unique=True,primary_key=True,editable=False)
 
     def __str__(self):

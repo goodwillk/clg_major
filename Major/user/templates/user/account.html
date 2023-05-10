@@ -21,9 +21,7 @@
                class="fa-solid fa-globe"></i></a>
       </div>
       <div class="account-graph-section">
-         <div class="account-graph1">
-            <canvas id="myChart0"></canvas>
-         </div>
+
          <div class="account-graph2">
             <div class="account-graph2-graph">
                <canvas id="myChart1"></canvas>
@@ -32,17 +30,39 @@
                <canvas id="myChart2"></canvas>
             </div>
          </div>
+         <div class="account-graph1">
+            {% if profile.experience%}
+            <h2>Experience :</h2>
+            <p>{{profile.experience}}</p>
+
+            {% endif%}
+            {% if profile.projects%}
+            <h2>Projects :</h2>
+            <p>{{profile.projects}}</p>
+
+            {% endif%}
+            {% if profile.skills%}
+            <h2>Skills :</h2>
+            <p>{{profile.skills}}</p>
+
+            {% endif%}
+            {% if profile.certificates%}
+            <h2>Certificates :</h2>
+            <p>{{profile.certificates}}</p>
+
+            {% endif%}
+         </div>
       </div>
    </div>
-   <div class="account-heatmap">
+   <!-- <div class="account-heatmap">
       <canvas style="height: 370px;" id="myChart3"></canvas>
-   </div>
+   </div> -->
 
-   <div class="account-coding-profile">
+   <!-- <div class="account-coding-profile">
       <div class="account-leetcode-profile"></div>
       <div class="account-codechef-profile"></div>
       <div class="account-hackerrank-profile"></div>
-   </div>
+   </div> -->
 
 </div>
 <script>
@@ -58,9 +78,9 @@
       document.getElementById('myChart2'),
       config2
    );
-   var myChart = new Chart(
-      document.getElementById('myChart3'),
-      config3
-   );
+   // var myChart = new Chart(
+   //    document.getElementById('myChart3'),
+   //    config3
+   // );
 </script>
 {% endblock content %}

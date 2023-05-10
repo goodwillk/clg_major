@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+{% block content %}
+{% load static%}
+
+<body>
+   <div class="about">
+      <!-- <h1>hello</h1> -->
+      <div class="about">
+         <div class="about_intro">
+            <h1 style="color:rgb(52, 206, 218); margin-bottom: 12px;">Try Your SQL Skills</h1>
+
+            <div class="iframe_sql">
+               <iframe src="https://www.programiz.com/sql/online-compiler/" height="800" width="1000"
+                  title="Iframe Example"></iframe>
+            </div>
+
+
+         </div>
+         <div class="about_intro">
+            <h1 style="color: rgb(52, 206, 218); margin-bottom: 15px;">Try Your Coding Skills</h1>
+
+            <div class="iframe_sql">
+               <iframe src="https://www.programiz.com/c-programming/online-compiler/" height="800" width="1000"
+                  title="Iframe Example"></iframe>
+            </div>
+
+
+         </div>
+
+
+      </div>
+
+
+
+   </div>
+
+</body>
+
+{% endblock content%}

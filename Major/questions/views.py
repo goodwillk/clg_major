@@ -10,10 +10,12 @@ def problems(request):
     }
     return render(request,'questions/questions.html',context)
 
-def about(request):
-    return render(request,'about.html')
+# def about(request):
+#     return render(request,'about.html')
 def contact(request):
     return render(request,'contact.html')
+def service(request):
+    return render(request,'service.html')
 
 def learn_dsa(request):
     return render(request,'study_material/dsa/dsa.html')

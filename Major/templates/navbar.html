@@ -5,12 +5,12 @@
       <p>Platform for achievers </p>
    </div>
    <div class="navbar-links">
-      <a href="{%url 'problems' %}">Practice</a>
-      <a href="#">services</a>
-      <a href="{% url 'about' %}">about</a>
-      <a href="{% url 'contact' %}">contact</a>
+      <a href="{%url 'problems' %}">practice</a>
+      <a href="{%url 'service' %}">services</a>
+
+      <a href="{% url 'contact' %}">contact us</a>
       {%if request.user.is_authenticated %}
-      <a href="{%url 'account' %}">Account</a>
+      <a href="{%url 'account' %}">account</a>
       <a href="{%url 'logout' %}" class="login-btn">Logout</a>
       {% else %}
       <a href="{%url 'login' %}" class="login-btn">Login/Sign Up</a>
